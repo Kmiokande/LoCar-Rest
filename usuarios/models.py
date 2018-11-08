@@ -10,7 +10,7 @@ class Usuario(models.Model):
     cnh = models.CharField(max_length=11)
     email = models.CharField(max_length=60)
     telefone = models.CharField(max_length=15)
-    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE, null=True, blank=True)
+    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.nome

@@ -9,4 +9,4 @@ class Endereco(models.Model):
     estado = models.CharField(max_length=2)
 
     def __str__(self):
-        return self.logradouro
+        return self.logradouro + ' - ' + self.complemento + ' - ' + self.cidade

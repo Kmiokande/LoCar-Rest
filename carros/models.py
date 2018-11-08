@@ -9,4 +9,4 @@ class Carro(models.Model):
     renavam = models.CharField(max_length=11)
 
     def __str__(self):
-        return self.placa
+        return self.modelo + ' - ' + self.placa
