@@ -1,7 +1,10 @@
 from django.db import models
 from enderecos.models import Endereco
+from django.contrib.auth.models import User
+
 
 class Usuario(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100)
     data_nasc = models.DateField()
     nome_mae = models.CharField(max_length=100)
