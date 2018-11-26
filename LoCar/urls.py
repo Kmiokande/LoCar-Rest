@@ -19,12 +19,12 @@ from django.urls import path
 from rest_framework import routers
 from carros.api.viewsets import CarroViewSet
 from enderecos.api.viewsets import EnderecoViewSet
-from usuarios.api.viewsets import UsuarioViewSet
+from clientes.api.viewsets import ClienteViewSet
 
 router = routers.DefaultRouter()
 router.register(r'carros', CarroViewSet)
 router.register(r'enderecos', EnderecoViewSet)
-router.register(r'usuarios', UsuarioViewSet)
+router.register(r'clientes', ClienteViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
