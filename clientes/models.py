@@ -1,10 +1,10 @@
 from django.db import models
 from enderecos.models import Endereco
-from django.contrib.auth.models import User
+from django.contrib.auth.models import Group, User
 
 
 class Cliente(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     nome = models.CharField(max_length=100)
     data_nasc = models.DateField()
     nome_mae = models.CharField(max_length=100)
@@ -13,7 +13,7 @@ class Cliente(models.Model):
     cnh = models.CharField(max_length=11)
     email = models.CharField(max_length=60)
     telefone = models.CharField(max_length=15)
-    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE)
+    endereco = models.ForeignKey(Endereco, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.nome + ' - ' + self.cpf
