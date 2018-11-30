@@ -20,11 +20,13 @@ from rest_framework import routers
 from carros.api.viewsets import CarroViewSet
 from enderecos.api.viewsets import EnderecoViewSet
 from clientes.api.viewsets import ClienteViewSet
+from alugueis.api.viewsets import AluguelViewSet
 
 router = routers.DefaultRouter()
 router.register(r'carros', CarroViewSet)
 router.register(r'enderecos', EnderecoViewSet)
 router.register(r'clientes', ClienteViewSet)
+router.register(r'alugueis', AluguelViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

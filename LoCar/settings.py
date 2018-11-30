@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'carros',
     'enderecos',
     'clientes',
+    'alugueis',
 ]
 
 MIDDLEWARE = [
