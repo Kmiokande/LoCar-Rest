@@ -10,7 +10,7 @@ class Cliente(models.Model):
     cpf = models.CharField(max_length=11, unique=True)
     rg = models.CharField(max_length=9, unique=True)
     cnh = models.CharField(max_length=11, unique=True)
-    email = models.CharField(max_length=40, unique=True)
+    email = models.CharField(max_length=60, unique=True, blank=True)
     telefone = models.CharField(max_length=15)
     endereco = models.ForeignKey(Endereco, on_delete=models.PROTECT)
     data_cadastro = models.DateField(auto_now_add=True)
