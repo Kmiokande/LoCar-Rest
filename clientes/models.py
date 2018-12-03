@@ -16,4 +16,4 @@ class Cliente(models.Model):
     data_cadastro = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.nome + ' - ' + self.cpf
+        return self.nome + ' ' + self.sobrenome + ' - ' + self.cpf
