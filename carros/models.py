@@ -8,6 +8,7 @@ class Carro(models.Model):
     preco = models.DecimalField(max_digits=7, decimal_places=2)
     placa = models.CharField(max_length=8, unique=True)
     renavam = models.CharField(max_length=11, unique=True)
+    disponivel = models.BooleanField(default=True)
 
     def __str__(self):
         return self.modelo + ' - ' + self.placa
