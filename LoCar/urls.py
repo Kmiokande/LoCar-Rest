@@ -23,6 +23,7 @@ from clientes.api.viewsets import ClienteViewSet
 from alugueis.api.viewsets import AluguelViewSet
 
 router = routers.DefaultRouter()
+# router.register(r'carros', CarroViewSet, base_name='Carro')
 router.register(r'carros', CarroViewSet)
 router.register(r'enderecos', EnderecoViewSet)
 router.register(r'clientes', ClienteViewSet)
