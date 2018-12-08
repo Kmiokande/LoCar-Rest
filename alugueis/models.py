@@ -9,7 +9,7 @@ class Aluguel(models.Model):
     data_aluguel = models.DateField(auto_now_add=True)
     data_devolucao = models.DateField()
     preco = models.DecimalField(max_digits=7, decimal_places=2)
-    concluido = models.BooleanField(default=False)
+    concluido = models.BooleanField(default=False, blank=True)
 
     def __str__(self):
         return str(self.cliente) + ' - ' + str(self.carro)

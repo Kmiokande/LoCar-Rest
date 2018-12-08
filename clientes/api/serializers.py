@@ -6,6 +6,7 @@ from enderecos.models import Endereco
 
 
 class ClienteSerializer(ModelSerializer):
+
     endereco = EndrecoSerializer()
 
     class Meta:
@@ -15,7 +16,7 @@ class ClienteSerializer(ModelSerializer):
             'endereco', 'data_cadastro')
 
     def create(self, validated_data):
-        endereco = Endereco.objects.create(**validated_data['endereco'])
+        endereco = Endereco.objects.create(**validated_data.pop('endereco'))
         cliente = Cliente.objects.create(endereco=endereco, **validated_data)
         endereco.save()
         cliente.save()
