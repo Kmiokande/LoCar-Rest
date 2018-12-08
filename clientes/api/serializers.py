@@ -22,6 +22,8 @@ class ClienteSerializer(ModelSerializer):
         return cliente
 
     def update(self, instance, validated_data):
+        Endereco.objects.update(**validated_data.pop('endereco'))
+
         instance.nome = validated_data.get('nome', instance.nome)
         instance.sobrenome = validated_data.get('sobrenome', instance.sobrenome)
         instance.data_nasc = validated_data.get('data_nasc', instance.data_nasc)
